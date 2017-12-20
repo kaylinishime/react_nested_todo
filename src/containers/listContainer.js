@@ -7,6 +7,7 @@ export default class ListContainer extends Component{
 
   constructor(props) {
     super(props)
+    this.handleCloseTask = this.handleCloseTask.bind(this)
   }
 
   render(){
@@ -16,12 +17,25 @@ export default class ListContainer extends Component{
             <div className="panel panel-default">
               <div className="panel-body">
               <div className="list-group">
-                <Task />
+              {
+                  this.props.list.map((value, index) => (
+                      <Task
+                        key = {index}
+                        id = {index}
+                        name = {value}
+                        onClose = {this.handleCloseTask}
+                      />
+                  ))
+                }
                 </div>
               </div>
           </div>
         </div>
       </div>
     )
+  }
+
+  handleCloseTask(id){
+    this.props.removeTask(id)
   }
 }

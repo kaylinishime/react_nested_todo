@@ -4,6 +4,10 @@ export default class TaskForm extends Component {
 
   constructor(props){
     super(props)
+    this.state = {
+      taskTitle: ""
+    }
+    this.handleAddTask = this.handleAddTask.bind(this)
   }
 
   render(){
@@ -13,15 +17,35 @@ export default class TaskForm extends Component {
             <div style = {{margin:"20px"}}>
                 <div className="row">
                     <div className="col-md-7">
-                        <input type="text" className="form-control" placeholder="your task"/>
+                        <input type="text" className="form-control" placeholder="your task" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
                     </div>
                     <div className="col-md-4">
-                        <button className="btn btn-primary"> Create New Task </button>
+                        <button className="btn btn-primary" onClick = {this.handleAddTask}> Create New Task </button>
                     </div>
                 </div>
             </div>
         </div>
       </div>
     )
-  }
+}
+
+    checkKey(e) {
+      var keyCode = e.which || e.keyCode;
+      if(keyCode == 13) {
+        if(this.state.taskTitle.trim() !== "") {
+          this.props.newTask(this.state.taskTitle)
+        }
+      }
+    }
+
+    handleAddTask(e) {
+      let name = e.target.value
+      if(this.state.taskTitle.trim() !== "")
+        this.props.newTask(this.state.taskTitle)
+    }
+
+    updateTaskTitle(e) {
+      this.setState({taskTitle: e.target.value})
+    }
+
 }
