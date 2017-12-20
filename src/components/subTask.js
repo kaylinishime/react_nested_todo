@@ -8,7 +8,15 @@ export default class SubTask extends Component{
 
   render(){
     return(
-      <h1></h1>
+      <div>
+      <a href="#" className="list-group-item">
+      <input
+          type="checkbox"
+          ref="complete"
+        />task 2
+          <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
+      </a>
+      </div>
     )
   }
 }
