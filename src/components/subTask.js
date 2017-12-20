@@ -22,12 +22,12 @@ export default class SubTask extends Component{
     return(
       <div>
         <a href="#" className="list-group-item">
-        <input
-            type="checkbox"
-            checked={this.state.complete}
-            ref="complete"
-            onChange={this.handleChange}
-          />{this.props.subname}
+            <input
+                type="checkbox"
+                checked={this.state.complete}
+                ref="complete"
+                onChange={this.handleChange}
+              />{this.props.subname}
         </a>
       </div>
     )

@@ -18,7 +18,7 @@ export default class ListContainer extends Component{
         <div className = "col-md-8 col-md-offset-2">
             <div className="panel panel-default">
               <div className="panel-body">
-              <div className="list-group">
+              <div className="list-group-one">
               {
                   this.props.list.map((value, index) => (
                       <Task

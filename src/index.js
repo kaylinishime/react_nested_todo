@@ -31,7 +31,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="mainWrapper">
+				<h1>My Errand List</h1>
         <TaskForm newTask={this.handleAddTask} />
         <ListContainer
           list = {this.state.taskList}

@@ -8,18 +8,14 @@ export default class SubTaskList extends Component{
     super(props)
     this.handleCloseTask = this.handleCloseTask.bind(this)
   }
-  
+
   handleCloseTask(id){
     this.props.removeTask(id)
   }
 
   render(){
     return(
-      <div className="row">
-        <div className = "col-md-8 col-md-offset-2">
-            <div className="panel panel-default">
-              <div className="panel-body">
-              <div className="list-group">
+              <div className="list-group-two">
               {
                   this.props.sublist.map((value, index) => (
                       <SubTask
@@ -30,12 +26,7 @@ export default class SubTaskList extends Component{
                       />
                   ))
                 }
-
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
+            </div>
     )
   }
 }

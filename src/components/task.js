@@ -54,12 +54,14 @@ export default class Task extends Component{
     return(
       <div>
         <a href="#" className="list-group-item" onClick={this.toggleHidden}>
+      <div className="checkbox_one">
         <input
             type="checkbox"
             checked={this.state.complete}
             ref="complete"
             onChange={this.handleChange}
           />{this.props.name}
+        </div>
         </a>
         <div className="subtask" style={{display: this.state.isHidden ? 'none' : 'block' }}>
           <SubTaskList sublist = {this.state.subTaskList} removeTask = {this.handleRemoveTask} />

@@ -31,20 +31,14 @@ export default class TaskForm extends Component {
 
   render(){
     return (
-      <div className = "row">
-        <div className = "col-md-6 col-md-offset-3">
-            <div>
-                <div className="row">
-                    <div className="col-md-7">
-                        <input type="text" className="form-control" placeholder="your task" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
-                    </div>
-                    <div className="col-md-4">
-                        <button className="btn btn-primary" onClick = {this.handleAddTask}> Create New Task </button>
-                    </div>
-                </div>
+      <div className = "taskForm_outer">
+        <div className="taskForm_inner_1">
+            <input type="text" className="form-control" placeholder="Your Task" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
+          </div>
+            <div className="taskForm_inner_2">
+              <button className="btn btn-primary" onClick = {this.handleAddTask}>Add Task </button>
             </div>
-        </div>
-      </div>
-    )
-  }
-}
+          </div>
+        )
+      }
+    }

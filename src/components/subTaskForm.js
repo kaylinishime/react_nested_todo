@@ -12,17 +12,13 @@ export default class SubTaskForm extends Component {
 
   render(){
     return (
-      <div className = "row">
-        <div className = "col-md-6 col-md-offset-3">
-            <div style = {{margin:"20px"}}>
+            <div className = "subTaskForm_outer">
                 <div className="row">
                     <div className="col-md-7">
                         <input type="text" className="form-control" placeholder="your task sub" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
                     </div>
                 </div>
             </div>
-        </div>
-      </div>
     )
 }
 
