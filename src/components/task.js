@@ -10,9 +10,10 @@ export default class Task extends Component{
       }
 
     this.handleCloseTask = this.handleCloseTask.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
-
-  handleChange = () => {
+// test fasfs
+  handleChange() {
     this.setState({
        complete: !this.state.complete // flip boolean value
      }, function() {
@@ -29,7 +30,7 @@ export default class Task extends Component{
             checked={this.state.complete}
             ref="complete"
             onChange={this.handleChange}
-          />task 1
+          />{this.props.name}
             <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
         </a>
 
@@ -37,6 +38,8 @@ export default class Task extends Component{
       </div>
     )
   }
+
+
 
   handleCloseTask(){
   this.props.onClose(this.props.id)
