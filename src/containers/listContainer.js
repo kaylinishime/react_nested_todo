@@ -1,6 +1,4 @@
 import React, {Component} from "react"
-
-//Components
 import Task from "../components/task.js"
 
 export default class ListContainer extends Component{

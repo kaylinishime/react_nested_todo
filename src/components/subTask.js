@@ -7,8 +7,7 @@ export default class SubTask extends Component{
     this.state = {
       complete: false
     }
-
-    this.handleChange = this.handleChange.bind(this)
+      this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange() {
@@ -16,7 +15,7 @@ export default class SubTask extends Component{
        complete: !this.state.complete // flip boolean value
      }, function() {
        console.log(this.state);
-     }.bind(this));
+     }.bind(this))
    }
 
   render(){
@@ -28,8 +27,7 @@ export default class SubTask extends Component{
             checked={this.state.complete}
             ref="complete"
             onChange={this.handleChange}
-          />{this.props.subName}
-            <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
+          />{this.props.subname}
         </a>
       </div>
     )

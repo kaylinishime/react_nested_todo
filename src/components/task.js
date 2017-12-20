@@ -42,7 +42,6 @@ export default class Task extends Component{
             ref="complete"
             onChange={this.handleChange}
           />{this.props.name}
-            <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
         </a>
        <div className="subtask" style={{display: this.state.isHidden ? 'none' : 'block' }}>
         <SubTaskList sublist = {this.state.subTaskList} removeTask = {this.handleRemoveTask} />

@@ -33,7 +33,7 @@ export default class SubTaskForm extends Component {
       var keyCode = e.which || e.keyCode;
       if(keyCode == 13) {
         if(this.state.taskTitle.trim() !== "") {
-          this.props.newSubTask(this.state.value)
+          this.props.newSubTask(this.state.taskTitle)
         }
       }
     }
