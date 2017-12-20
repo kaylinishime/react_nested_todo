@@ -7,7 +7,7 @@ export default class SubTask extends Component{
     this.state = {
       complete: false
     }
-      this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange() {

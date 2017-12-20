@@ -8,6 +8,10 @@ export default class ListContainer extends Component{
     this.handleCloseTask = this.handleCloseTask.bind(this)
   }
 
+  handleCloseTask(id){
+    this.props.removeTask(id)
+  }
+
   render(){
     return(
       <div className="row">
@@ -31,9 +35,5 @@ export default class ListContainer extends Component{
         </div>
       </div>
     )
-  }
-
-  handleCloseTask(id){
-    this.props.removeTask(id)
   }
 }

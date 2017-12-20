@@ -19,9 +19,6 @@ export default class SubTaskForm extends Component {
                     <div className="col-md-7">
                         <input type="text" className="form-control" placeholder="your task sub" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
                     </div>
-                    <div className="col-md-4">
-                        <button className="btn btn-primary" onClick = {this.handlesubTask}> Create New Task </button>
-                    </div>
                 </div>
             </div>
         </div>

@@ -26,11 +26,29 @@ export default class Task extends Component{
 
   handleChange() {
     this.setState({
-       complete: !this.state.complete // flip boolean value
+    complete: !this.state.complete
      }, function() {
-       console.log(this.state);
+      console.log(this.state);
      }.bind(this));
    }
+
+  handleCloseTask(){
+    this.props.onClose(this.props.id)
+  }
+
+  handleRemoveTask(id){
+    let array = this.state.subTaskList;
+     array = array.filter(function (el, index) {
+       return index !== id
+     });
+    this.setState({subTaskList: array});
+   }
+
+ handlesubTask(name) {
+   let tmp = this.state.subTaskList;
+   tmp.push(name);
+   this.setState({subTaskList: tmp})
+ }
 
   render(){
     return(
@@ -43,35 +61,11 @@ export default class Task extends Component{
             onChange={this.handleChange}
           />{this.props.name}
         </a>
-       <div className="subtask" style={{display: this.state.isHidden ? 'none' : 'block' }}>
-        <SubTaskList sublist = {this.state.subTaskList} removeTask = {this.handleRemoveTask} />
-        <SubTaskForm newSubTask={this.handlesubTask}/>
-      </div>
+        <div className="subtask" style={{display: this.state.isHidden ? 'none' : 'block' }}>
+          <SubTaskList sublist = {this.state.subTaskList} removeTask = {this.handleRemoveTask} />
+          <SubTaskForm newSubTask={this.handlesubTask}/>
+        </div>
       </div>
     )
   }
-
-
-
-  handleCloseTask(){
-  this.props.onClose(this.props.id)
-}
-
-handleRemoveTask(id){
-  let array = this.state.subTaskList;
-    /* Remove selected value from array */
-  array = array.filter(function (el, index) {
-    return index !== id
-  });
-  this.setState({subTaskList: array});
-}
-
-
-handlesubTask(name) {
-  let tmp = this.state.subTaskList;
-  tmp.push(name);
-  this.setState({subTaskList: tmp})
-}
-
-
 }

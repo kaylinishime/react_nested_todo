@@ -7,7 +7,10 @@ export default class SubTaskList extends Component{
   constructor(props) {
     super(props)
     this.handleCloseTask = this.handleCloseTask.bind(this)
-
+  }
+  
+  handleCloseTask(id){
+    this.props.removeTask(id)
   }
 
   render(){
@@ -35,9 +38,4 @@ export default class SubTaskList extends Component{
       </div>
     )
   }
-
-  handleCloseTask(id){
-    this.props.removeTask(id)
-  }
-
 }
