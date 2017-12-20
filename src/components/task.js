@@ -1,10 +1,12 @@
 import React, {Component} from "react"
+import SubTaskList from "../containers/subTaskList.js"
 
 export default class Task extends Component{
   constructor(props) {
     super(props)
       this.state = {
-        complete: false
+        complete: false,
+        subTaskList: []
       }
 
     this.handleCloseTask = this.handleCloseTask.bind(this)
@@ -20,6 +22,7 @@ export default class Task extends Component{
 
   render(){
     return(
+      <div>
         <a href="#" className="list-group-item">
         <input
             type="checkbox"
@@ -29,6 +32,9 @@ export default class Task extends Component{
           />task 1
             <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
         </a>
+
+        <SubTaskList sublist = {this.state.subTaskList} />
+      </div>
     )
   }
 
