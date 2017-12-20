@@ -9,6 +9,7 @@ export default class Task extends Component{
 
     this.handleCloseTask = this.handleCloseTask.bind(this)
   }
+
   handleChange = () => {
     this.setState({
        complete: !this.state.complete // flip boolean value
