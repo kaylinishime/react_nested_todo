@@ -1,11 +1,13 @@
 import React, {Component} from "react"
 import SubTask from "../components/subTask.js"
 
+
 export default class SubTaskList extends Component{
 
   constructor(props) {
     super(props)
     this.handleCloseTask = this.handleCloseTask.bind(this)
+    this.handleCloseTask = this.handlesubTask.bind(this)
   }
 
   render(){
@@ -25,6 +27,7 @@ export default class SubTaskList extends Component{
                       />
                   ))
                 }
+
                 </div>
               </div>
           </div>
@@ -35,5 +38,10 @@ export default class SubTaskList extends Component{
 
   handleCloseTask(id){
     this.props.removeTask(id)
+  }
+  handlesubTask(name) {
+    let tmp = this.state.taskList;
+    tmp.push(name);
+    this.setState({taskList: tmp})
   }
 }

@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import SubTaskList from "../containers/subTaskList.js"
 import SubTaskForm from "../components/subTaskForm.js"
 
+
 export default class Task extends Component{
   constructor(props) {
     super(props)
@@ -14,6 +15,7 @@ export default class Task extends Component{
     this.handleCloseTask = this.handleCloseTask.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.toggleHidden = this.toggleHidden.bind(this)
+    this.handlesubTask = this.handlesubTask.bind(this)
   }
 
   toggleHidden () {
@@ -43,8 +45,8 @@ export default class Task extends Component{
             <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
         </a>
        <div className="subtask" style={{display: this.state.isHidden ? 'none' : 'block' }}>
-        <SubTaskList sublist = {this.state.subTaskList} />
-        <SubTaskForm newTask={this.handleAddTask}/>
+        <SubTaskList sublist = {this.state.subTaskList} removeTask = {this.handleRemoveTask} />
+        <SubTaskForm newSubTask={this.handlesubTask}/>
       </div>
       </div>
     )
@@ -54,6 +56,22 @@ export default class Task extends Component{
 
   handleCloseTask(){
   this.props.onClose(this.props.id)
+}
+
+handleRemoveTask(id){
+  let array = this.state.subTaskList;
+    /* Remove selected value from array */
+  array = array.filter(function (el, index) {
+    return index !== id
+  });
+  this.setState({subTaskList: array});
+}
+
+
+handlesubTask(name) {
+  let tmp = this.state.subTaskList;
+  tmp.push(name);
+  this.setState({subTaskList: tmp})
 }
 
 

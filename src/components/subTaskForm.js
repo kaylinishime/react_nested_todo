@@ -7,7 +7,7 @@ export default class SubTaskForm extends Component {
     this.state = {
       taskTitle: ""
     }
-    this.handleAddTask = this.handleAddTask.bind(this)
+    this.handlesubTask = this.handlesubTask.bind(this)
   }
 
   render(){
@@ -18,6 +18,9 @@ export default class SubTaskForm extends Component {
                 <div className="row">
                     <div className="col-md-7">
                         <input type="text" className="form-control" placeholder="your task sub" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
+                    </div>
+                    <div className="col-md-4">
+                        <button className="btn btn-primary" onClick = {this.handlesubTask}> Create New Task </button>
                     </div>
                 </div>
             </div>
@@ -30,16 +33,17 @@ export default class SubTaskForm extends Component {
       var keyCode = e.which || e.keyCode;
       if(keyCode == 13) {
         if(this.state.taskTitle.trim() !== "") {
-          this.props.subnewTask(this.state.taskTitle)
+          this.props.newSubTask(this.state.value)
         }
       }
     }
 
-    handleAddTask(e) {
+    handlesubTask(e) {
       let name = e.target.value
-      if(this.state.taskTitle.trim() !== "")
-        this.props.subnewTask(this.state.taskTitle)
+      if(this.state.taskTitle.trim() !== "") {
+           this.props.newSubTask(this.state.taskTitle)
     }
+  }
 
     updateTaskTitle(e) {
       this.setState({taskTitle: e.target.value})
