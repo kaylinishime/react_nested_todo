@@ -9,13 +9,15 @@ export default class SubTask extends Component{
   render(){
     return(
       <div>
-      <a href="#" className="list-group-item">
-      <input
-          type="checkbox"
-          ref="complete"
-        />task 2
-          <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
-      </a>
+        <a href="#" className="list-group-item">
+        <input
+            type="checkbox"
+            checked={this.state.complete}
+            ref="complete"
+            onChange={this.handleChange}
+          />{this.props.name}
+            <i style = {{float:"right"}} className="glyphicon glyphicon-remove"></i>
+        </a>
       </div>
     )
   }

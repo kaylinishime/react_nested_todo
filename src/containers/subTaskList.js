@@ -1,6 +1,4 @@
 import React, {Component} from "react"
-
-//Components
 import SubTask from "../components/subTask.js"
 
 export default class SubTaskList extends Component{
