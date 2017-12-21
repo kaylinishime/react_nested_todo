@@ -33,11 +33,11 @@ class App extends React.Component {
     return (
       <div id="mainWrapper">
 				<h1>My Errand List</h1>
-        <TaskForm newTask={this.handleAddTask} />
         <ListContainer
           list = {this.state.taskList}
           removeTask = {this.handleRemoveTask}
           />
+					<TaskForm newTask={this.handleAddTask} />
       </div>
     	)
   	}

@@ -5,7 +5,8 @@ export default class TaskForm extends Component {
   constructor(props){
     super(props)
     this.state = {
-      taskTitle: ""
+      taskTitle: "",
+      placeholder: "+Add Task"
     }
     this.handleAddTask = this.handleAddTask.bind(this)
   }
@@ -15,6 +16,7 @@ export default class TaskForm extends Component {
     if(keyCode == 13) {
       if(this.state.taskTitle.trim() !== "") {
         this.props.newTask(this.state.taskTitle)
+              this.setState({taskTitle: '', placeholder: "+Add Task"})
       }
     }
   }
@@ -23,21 +25,28 @@ export default class TaskForm extends Component {
     let name = e.target.value
     if(this.state.taskTitle.trim() !== "")
       this.props.newTask(this.state.taskTitle)
+      this.setState({taskTitle: '', placeholder: "+Add Task"})
   }
 
   updateTaskTitle(e) {
     this.setState({taskTitle: e.target.value})
   }
 
+  placeHolder(e) {
+    this.setState({placeholder: ''})
+  }
+  blurOut(e) {
+    this.setState({placeholder: '+Add Task'})
+  }
+
+
   render(){
     return (
       <div className = "taskForm_outer">
         <div className="taskForm_inner_1">
-            <input type="text" className="form-control" placeholder="Your Task" onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e)} />
+            <input type="text" className="form-control" placeholder={this.state.placeholder} onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e) } onFocus={e => this.placeHolder(e)} onBlur = {e =>
+              this.blurOut(e)} />
           </div>
-            <div className="taskForm_inner_2">
-              <button className="btn btn-primary" onClick = {this.handleAddTask}>Add Task </button>
-            </div>
           </div>
         )
       }
