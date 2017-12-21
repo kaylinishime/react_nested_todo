@@ -62,6 +62,7 @@ export default class Task extends Component{
             onChange={this.handleChange}
           />{this.props.name}
         </div>
+          <label className="round_one" style={{display: this.state.complete ? 'block' : 'none'}}></label>
         </a>
         <div className="subtask" style={{display: this.state.isHidden ? 'none' : 'block' }}>
           <SubTaskList sublist = {this.state.subTaskList} removeTask = {this.handleRemoveTask} />

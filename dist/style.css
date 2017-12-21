@@ -7,20 +7,21 @@
 }
 
 #mainWrapper {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 
 h1 {
-  font-weight: 200;
-  font-size: 1.5vw;
-  padding: 1vw;
-  letter-spacing: 0.1vw;
-  background-color: #3156f3;
-  color: #fff;
-  text-align: left;
+    font-weight: 200;
+    font-size: 1.5vw;
+    padding: 1.5vw 2.5vw;
+    margin-bottom: 3vw;
+    letter-spacing: 0.1vw;
+    background-color: #3156f3;
+    color: #fff;
+    text-align: left;
 }
 
 a.list-group-item {
@@ -32,16 +33,20 @@ a.list-group-item {
   flex-direction: row;
   justify-content: center;
 }
+.taskForm_inner_1 {
+    width: 92%;
+}
 
 .taskForm_outer input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #CCC;
+  border-top: 1px dashed #CCC;
   color: #555;
   box-sizing: border-box;
   height: 3vw;
-  width: 25vw;
+  width: 100%;
   font-size: 1.5vw;
+  font-weight: 600;
 }
 
 .subTaskForm_outer input {
@@ -81,9 +86,8 @@ a:-webkit-any-link {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  max-width: 35vw;
   margin: 0 auto;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 .list-group-two {
@@ -91,24 +95,40 @@ a:-webkit-any-link {
 }
 
 input[type="checkbox"] {
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
-  background: #ebebeb;
-  border-radius: 1px;
-  box-sizing: border-box;
-  position: relative;
-  box-sizing: content-box;
-  width: 2vw;
-  height: 2vw;
-  border-width: 0;
-  transition: all .3s linear;
-  font-size: 4vw;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    box-sizing: content-box;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-width: 0;
+    transition: all .3s linear;
+    font-size: 5vw;
+    vertical-align: bottom;
+    border: 1px solid #ebebeb;
 }
 
-input[type="checkbox"]:checked {
-  background-color: #05406e;
+label.round_one  {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 0.3vw;
+    left: 2.7vw;
+    position: relative;
+    transform: rotate(-45deg);
+    width: 0.7vw;
+    opacity: 1;
+    bottom: 2.25vw;
 }
+input[type="checkbox"]:checked {
+  background-color: #3156f3;
+}
+
 
 input[type="checkbox"]:focus {
   outline: 0 none;
@@ -130,6 +150,6 @@ input[type="checkbox"]:focus {
   color: #3156f3;;
 }
 .checkbox_one {
-  font-size: 3vw;
+  font-size: 1.5vw;
   padding: 1vw;
 }

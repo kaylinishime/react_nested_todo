@@ -6,7 +6,7 @@ export default class TaskForm extends Component {
     super(props)
     this.state = {
       taskTitle: "",
-      placeholder: "+Add Task"
+      placeholder: "+ Add Task"
     }
     this.handleAddTask = this.handleAddTask.bind(this)
   }
