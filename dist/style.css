@@ -13,6 +13,10 @@
   text-align: center;
 }
 
+#wrapper_inner {
+    padding: 0vw 4vw;
+}
+
 h1 {
     font-weight: 200;
     font-size: 1.5vw;
@@ -24,9 +28,23 @@ h1 {
     text-align: left;
 }
 
-a.list-group-item {
-  display: block;
+a.list-group-item{
+  display: inline-block;
+  padding-top: 1vw;
 }
+
+.after_one, .after_two {
+    border-bottom: 1px solid #ebebeb;
+    margin-left: 4vw;
+    padding-top: 1vw;
+}
+.after_one{
+    width: 95%;
+  }
+
+  .after_two {
+    width: 98%;
+  }
 
 .taskForm_outer {
   display: flex;
@@ -41,24 +59,39 @@ a.list-group-item {
   background-color: transparent;
   border: none;
   border-top: 1px dashed #CCC;
+  box-shadow: -1px -9px 0px 0px #fff;
   color: #555;
   box-sizing: border-box;
   height: 3vw;
-  width: 100%;
+  width: 104%;
   font-size: 1.5vw;
   font-weight: 600;
+}
+
+.arrow:after {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size: 2vw;
+  color: #d8d8d8;
+}
+
+.arrow_down:after {
+  content: "\f0d7";
+  font-family: FontAwesome;
+  font-size: 2vw;
+  color: #d8d8d8;
 }
 
 .subTaskForm_outer input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #CCC;
   color: #555;
   box-sizing: border-box;
   height: 3vw;
   width: 25vw;
   font-size: 1.5vw;
   margin-left: 7vw;
+  padding-bottom: 1vw;
 }
 
 .taskForm_outer button {
@@ -92,7 +125,7 @@ a:-webkit-any-link {
 }
 
 .list-group-two {
-  padding: 0vw 5vw;
+    padding: 0vw 3vw 1vw;
 }
 
 input[type="checkbox"] {
@@ -114,17 +147,17 @@ input[type="checkbox"] {
 }
 
 label.round_one  {
-    border: 2px solid #fff;
-    border-top: none;
-    border-right: none;
-    content: "";
-    height: 0.3vw;
-    left: 2.7vw;
-    position: relative;
-    transform: rotate(-45deg);
-    width: 0.7vw;
-    opacity: 1;
-    bottom: 2.25vw;
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 0.3vw;
+  left: 1.75vw;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 0.7vw;
+  opacity: 1;
+  bottom: 2.5vw;
 }
 input[type="checkbox"]:checked {
   background-color: #3156f3;
@@ -152,5 +185,6 @@ input[type="checkbox"]:focus {
 }
 .checkbox_one {
   font-size: 1.5vw;
-  padding: 1vw;
+  display: inline-block;
+  width: 96%;
 }

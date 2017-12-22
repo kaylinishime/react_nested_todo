@@ -29,6 +29,7 @@ export default class SubTask extends Component{
                 onChange={this.handleChange}
               />{this.props.subname}
         </a>
+          <div className="after_two"></div>
       </div>
     )
   }
