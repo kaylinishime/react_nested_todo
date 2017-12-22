@@ -16,7 +16,7 @@ export default class TaskForm extends Component {
     if(keyCode == 13) {
       if(this.state.taskTitle.trim() !== "") {
         this.props.newTask(this.state.taskTitle)
-              this.setState({taskTitle: '', placeholder: "+Add Task"})
+        this.setState({taskTitle: '', placeholder: "+ Add Task"})
       }
     }
   }
@@ -25,7 +25,7 @@ export default class TaskForm extends Component {
     let name = e.target.value
     if(this.state.taskTitle.trim() !== "")
       this.props.newTask(this.state.taskTitle)
-      this.setState({taskTitle: '', placeholder: "+Add Task"})
+      this.setState({taskTitle: '', placeholder: "+ Add Task"})
   }
 
   updateTaskTitle(e) {
@@ -36,7 +36,7 @@ export default class TaskForm extends Component {
     this.setState({placeholder: ''})
   }
   blurOut(e) {
-    this.setState({placeholder: '+Add Task'})
+    this.setState({placeholder: '+ Add Task'})
   }
 
 

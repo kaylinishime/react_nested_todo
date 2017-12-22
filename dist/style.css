@@ -1,5 +1,5 @@
 #app {
-  max-width: 1240px;
+  max-width: 97vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -31,10 +31,11 @@ h1 {
 a.list-group-item{
   display: inline-block;
   padding-top: 1vw;
+  width: 1.2vw;
 }
 
 .after_one, .after_two {
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 0.1vw solid #ebebeb;
     margin-left: 4vw;
     padding-top: 1vw;
 }
@@ -43,7 +44,7 @@ a.list-group-item{
   }
 
   .after_two {
-    width: 98%;
+    width: 95%;
   }
 
 .taskForm_outer {
@@ -53,21 +54,20 @@ a.list-group-item{
 }
 .taskForm_inner_1 {
     width: 92%;
+    padding-left: 1.8vw;
 }
-
 .taskForm_outer input {
-  background-color: transparent;
-  border: none;
-  border-top: 1px dashed #CCC;
-  box-shadow: -1px -9px 0px 0px #fff;
-  color: #555;
-  box-sizing: border-box;
-  height: 3vw;
-  width: 104%;
-  font-size: 1.5vw;
-  font-weight: 600;
+    background-color: transparent;
+    border: none;
+    border-top: 0.1vw dashed #CCC;
+    box-shadow: 0vw -1vw 0vw 0vw #fff;
+    color: #555;
+    box-sizing: border-box;
+    height: 3vw;
+    width: 98%;
+    font-size: 1vw;
+    font-weight: 600;
 }
-
 .arrow:after {
   content: "\f0da";
   font-family: FontAwesome;
@@ -83,15 +83,16 @@ a.list-group-item{
 }
 
 .subTaskForm_outer input {
-  background-color: transparent;
-  border: none;
-  color: #555;
-  box-sizing: border-box;
-  height: 3vw;
-  width: 25vw;
-  font-size: 1.5vw;
-  margin-left: 7vw;
-  padding-bottom: 1vw;
+    background-color: transparent;
+    border: none;
+    color: #555;
+    box-sizing: border-box;
+    height: 3vw;
+    width: 25vw;
+    font-size: 1vw;
+    margin-left: 7vw;
+    padding-bottom: 1vw;
+    font-weight: 600;
 }
 
 .taskForm_outer button {
@@ -108,7 +109,6 @@ textarea:focus, input:focus, button:focus {
 }
 
 a:-webkit-any-link {
-  text-decoration: none !important;
   color: #05406e !important;
 }
 
@@ -133,7 +133,7 @@ input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
     background: #fff;
-    border-radius: 50%;
+    border-radius: 1vw;
     box-sizing: border-box;
     position: relative;
     box-sizing: content-box;
@@ -143,22 +143,31 @@ input[type="checkbox"] {
     transition: all .3s linear;
     font-size: 5vw;
     vertical-align: bottom;
-    border: 1px solid #ebebeb;
+    border: 0.1vw solid #ebebeb;
 }
 
-label.round_one  {
-  border: 2px solid #fff;
+label.round_one, label.round_two  {
+  border: 0.1vw solid #fff;
   border-top: none;
   border-right: none;
   content: "";
-  height: 0.3vw;
-  left: 1.75vw;
   position: relative;
   transform: rotate(-45deg);
-  width: 0.7vw;
   opacity: 1;
-  bottom: 2.5vw;
 }
+label.round_one {
+    height: 0.3vw;
+    width: 0.6vw;
+    left: 3vw;
+    bottom: 2.3vw;
+}
+label.round_two {
+    height: 0.3vw;
+    width: 0.6vw;
+    left: 1.8vw;
+    bottom: 1.2vw;
+}
+
 input[type="checkbox"]:checked {
   background-color: #3156f3;
 }
@@ -172,19 +181,35 @@ input[type="checkbox"]:focus {
 
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #3156f3;;
+  color: #3156f3;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #3156f3;;
+  color: #3156f3;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #3156f3;;
+  color: #3156f3;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #3156f3;;
+  color: #3156f3;
 }
-.checkbox_one {
+.checkbox_one, .checkbox_two {
   font-size: 1.5vw;
   display: inline-block;
-  width: 96%;
+}
+.checkbox_one {
+    width: 95%;
+}
+.checkbox_two {
+  padding-top: 1vw;
+}
+
+@media(max-width: 1600px){
+  label.round_two {
+    left: 1.85vw;
+    bottom: 1.3vw;
+}
+label.round_one {
+    left: 3vw;
+    bottom: 2.4vw;
+}
 }

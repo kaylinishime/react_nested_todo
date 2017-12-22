@@ -58,12 +58,8 @@ export default class Task extends Component{
       <div className="arrow_down" style={{display: this.state.subTaskList.length > 0 && !this.state.isHidden ? 'inline-block' : 'none'}}></div>
   </a>
       <div className="checkbox_one">
-        <input
-            type="checkbox"
-            checked={this.state.complete}
-            ref="complete"
-            onChange={this.handleChange}
-          /><a href="#" className="list-group-item" onClick={this.toggleHidden}>{this.props.name}</a>
+        <input type="checkbox" checked={this.state.complete} ref="complete" onChange={this.handleChange} />
+          <a href="#" className="list-group-item" onClick={this.toggleHidden} style = {{textDecoration: this.state.complete ? 'line-through' : 'none'}}>{this.props.name}</a>
             <div className="after_one"></div>
         </div>
           <label className="round_one" style={{display: this.state.complete ? 'block' : 'none'}}></label>

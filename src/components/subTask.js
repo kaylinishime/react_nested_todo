@@ -21,14 +21,16 @@ export default class SubTask extends Component{
   render(){
     return(
       <div>
-        <a href="#" className="list-group-item">
+        <a href="#" className="list-group-item"></a>
+          <div className="checkbox_two">
             <input
                 type="checkbox"
                 checked={this.state.complete}
                 ref="complete"
                 onChange={this.handleChange}
-              />{this.props.subname}
-        </a>
+              /><a style = {{textDecoration: this.state.complete ? 'line-through' : 'none'}}>{this.props.subname}</a>
+          <label className="round_two" style={{display: this.state.complete ? 'block' : 'none'}}></label>
+            </div>
           <div className="after_two"></div>
       </div>
     )
