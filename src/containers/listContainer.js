@@ -27,13 +27,13 @@ export default class ListContainer extends Component{
                         name = {value}
                         onClose = {this.handleCloseTask}
                       />
-                  ))
-                }
+                    ))
+                  }
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-}

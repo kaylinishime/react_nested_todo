@@ -42,12 +42,17 @@ export default class TaskForm extends Component {
 
   render(){
     return (
+      <div>
       <div className = "taskForm_outer">
-        <div className="taskForm_inner_1">
-            <input type="text" className="form-control" placeholder={this.state.placeholder} onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e) } onFocus={e => this.placeHolder(e)} onBlur = {e =>
-              this.blurOut(e)} />
+        <div className="checkbox_plain">
+          <input type="checkbox" disabled />
+            <a href="#" className="list-group-item"></a>
+          </div>
+          <div className="taskForm_inner_1">
+            <input type="text" className="form-control" placeholder={this.state.placeholder} onChange = { e => this.updateTaskTitle(e)} value={this.state.taskTitle} onKeyPress = {e => this.checkKey(e) } onFocus={e => this.placeHolder(e)} onBlur = {e => this.blurOut(e)} />
           </div>
           </div>
+        </div>
         )
       }
     }

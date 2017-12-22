@@ -29,15 +29,16 @@ export default class SubTaskForm extends Component {
   }
 }
 
-  updateTaskTitle(e) {
-    this.setState({taskTitle: e.target.value})
-  }
+ updateTaskTitle(e) {
+   this.setState({taskTitle: e.target.value})
+ }
 
-  placeHolder(e) {
-    this.setState({placeholder: ''})
-  }
-  blurOut(e) {
-    this.setState({placeholder: '+ Add Subtask'})
+ placeHolder(e) {
+   this.setState({placeholder: ''})
+ }
+
+ blurOut(e) {
+   this.setState({placeholder: '+ Add Subtask'})
   }
 
   render(){
@@ -50,9 +51,6 @@ export default class SubTaskForm extends Component {
                     </div>
                 </div>
             </div>
-    )
-}
-
-
-
-}
+          )
+        }
+      }

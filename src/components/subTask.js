@@ -25,11 +25,12 @@ export default class SubTask extends Component{
           <div className="checkbox_two">
             <input
                 type="checkbox"
-                checked={this.state.complete}
+                checked={this.state.complete} style={{opacity: this.state.complete ? 0.5 : 1}}
                 ref="complete"
                 onChange={this.handleChange}
-              /><a style = {{textDecoration: this.state.complete ? 'line-through' : 'none'}}>{this.props.subname}</a>
-          <label className="round_two" style={{display: this.state.complete ? 'block' : 'none'}}></label>
+              />
+              <a style = {{textDecoration: this.state.complete ? 'line-through' : 'none', opacity: this.state.complete ? 0.5 : 1}}>{this.props.subname}</a>
+              <label className="round_two" style={{display: this.state.complete ? 'block' : 'none'}}></label>
             </div>
           <div className="after_two"></div>
       </div>

@@ -15,18 +15,17 @@ export default class SubTaskList extends Component{
 
   render(){
     return(
-              <div className="list-group-two">
-              {
-                  this.props.sublist.map((value, index) => (
-                      <SubTask
-                        key = {index}
-                        id = {index}
-                        subname = {value}
-                        onClose = {this.handleCloseTask}
-                      />
-                  ))
-                }
-            </div>
+      <div className="list-group-two">
+        {
+          this.props.sublist.map((value, index) => (
+            <SubTask
+              key = {index}
+              id = {index}
+              subname = {value}
+              onClose = {this.handleCloseTask} />
+            ))
+         }
+      </div>
     )
   }
 }

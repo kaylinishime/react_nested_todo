@@ -34,10 +34,7 @@ class App extends React.Component {
       <div id="mainWrapper">
 				<h1>My Errand List</h1>
 				<div id="wrapper_inner">
-					<ListContainer
-          list = {this.state.taskList}
-          removeTask = {this.handleRemoveTask}
-          />
+					<ListContainer list = {this.state.taskList} removeTask = {this.handleRemoveTask} />
 					<TaskForm newTask={this.handleAddTask} />
 				</div>
       </div>
@@ -47,5 +44,5 @@ class App extends React.Component {
 
 ReactDOM.render(
    <App />,
-  document.getElementById('app')
+   document.getElementById('app')
 );
