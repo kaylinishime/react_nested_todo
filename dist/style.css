@@ -43,13 +43,10 @@ a.list-group-item {
   padding-top: 1vw;
 }
 
-.after_one {
-  width: 95%;
+.after_one, .after_two {
+  width: 97%;
 }
 
-.after_two {
-  width: 95%;
-}
 
 .taskForm_outer {
   display: flex;
@@ -58,7 +55,7 @@ a.list-group-item {
 }
 
 .taskForm_inner_1 {
-  width: 92.1%;
+    width: 92%;
 }
 
 .taskForm_outer button {
